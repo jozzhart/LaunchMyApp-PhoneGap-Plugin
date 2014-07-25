@@ -51,13 +51,17 @@
 
     <source-file src="src/android/nl/xservices/plugins/LaunchMyApp.java" target-dir="src/nl/xservices/plugins"/>
 
-    <config-file target="AndroidManifest.xml" parent="/*/application/activity">
-      <intent-filter>
-        <data android:scheme="$URL_SCHEME"/>
-        <action android:name="android.intent.action.VIEW" />
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
-      </intent-filter>
+    <config-file target="AndroidManifest.xml" parent="/*/application">
+      <activity android:configChanges="keyboardHidden|orientation" android:label="Comrades"
+                          android:name=".Comrades"
+                          android:launchMode="singleTask" >
+        <intent-filter>
+          <data android:scheme="$URL_SCHEME"/>
+          <action android:name="android.intent.action.VIEW" />
+          <category android:name="android.intent.category.DEFAULT" />
+          <category android:name="android.intent.category.BROWSABLE" />
+        </intent-filter>
+      </activity>
     </config-file>
   </platform>
 
